@@ -1,6 +1,6 @@
 env = ENV["RACK_ENV"] || "development"
 require 'data_mapper'
-# require 'sinatra'
+require 'sinatra'
 
 DataMapper.setup(:default, "postgres://localhost/chitter_#{env}")
 
