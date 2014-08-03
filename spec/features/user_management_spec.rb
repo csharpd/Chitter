@@ -5,6 +5,9 @@ include SessionHelpers
 
 feature "User signs up" do
   scenario "when previously not logged in" do
+    visit '/'
+    expect(page).not_to have_content("Welcome, test@test.com")
+    click_link "Sign up"
     expect{ sign_up }.to change(User, :count).by(1)
     expect(page).to have_content("Welcome")
     expect(User.first.email).to eq("chloe@gmail.com")
@@ -21,8 +24,6 @@ feature "User signs up" do
     expect { sign_up("chloe","csharpd","chloecoder@gmail.com","frogs") }.to change(User, :count).by(0)
     expect(page).to have_content("That username is already taken")
   end
-
-
 end
 
 
@@ -37,6 +38,7 @@ feature "User signs in" do
   scenario "with correct information" do
     visit '/'
     expect(page).not_to have_content("Welcome, test@test.com")
+    click_link "Sign in"
     sign_in('test@test.com','test')
     expect(page).to have_content("Welcome, test@test.com")
   end
