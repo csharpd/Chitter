@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'rack-flash'
 require 'sinatra/partial'
+require 'dm-timestamps'
 require_relative 'data_mapper_setup'
 
 require_relative 'controllers/application'
