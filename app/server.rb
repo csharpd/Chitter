@@ -7,5 +7,6 @@ require_relative 'controllers/application'
 require_relative 'controllers/peeps'
 require_relative 'controllers/users'
 
+enable :sessions
 set :session_secret, 'super secret'
 use Rack::Flash
