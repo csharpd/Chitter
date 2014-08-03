@@ -1,0 +1,29 @@
+<header>
+  <div>
+    <a href="/">Chitter</a>
+      <% if current_user %>
+        <form method="post" action="/sessions">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Sign out">
+        </form>
+
+
+      <% else %>
+#else sign up / sign in
+      <% end %>
+
+
+  </div>
+  <div id="user-links">
+      <% if current_user %>
+      Welcome, <%=current_user.email %>
+
+    <div id="new-peep">
+    <form action="/peeps" method="post">
+      What's up Doc?: <input type="text" name="content">
+      <input type="submit" value="Peep!">
+    </form>
+    </div>
+    <% end %>
+  </div>
+</header>
