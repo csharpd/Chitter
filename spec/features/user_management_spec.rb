@@ -1,12 +1,4 @@
 require 'spec_helper'
-# require_relative 'helpers/session'
-
-# include SessionHelpers
-
-# Feature
-# In order to use Chitter
-# As a Maker
-# I want to sign up to the service
 
 feature "User signs up" do
   scenario "when previously not logged in" do
@@ -31,3 +23,30 @@ feature "User signs up" do
     click_button "Sign up"
   end
 end
+
+
+feature "User signs in" do
+
+  before(:each) do
+    User.create(:name => "xxx", :username => "xoxo", :email => "test@test.com",
+      :password => 'test',
+      )
+  end
+
+  scenario "with correct information" do
+    visit '/'
+    expect(page).not_to have_content("Welcome, test@test.com")
+    sign_in('test@test.com','test')
+    expect(page).to have_content("Welcome, test@test.com")
+  end
+
+  def sign_in(email, password)
+    visit '/sessions/new'
+    fill_in 'email', :with => email
+    fill_in 'password', :with => password
+    click_button 'Sign in'
+  end
+end
+
+
+
