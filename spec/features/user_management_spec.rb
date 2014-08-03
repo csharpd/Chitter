@@ -12,6 +12,12 @@ feature "User signs up" do
     expect(User.first.email).to eq("chloe@gmail.com")
   end
 
+  scenario "with a email that is already taken" do
+    lambda { sign_up }.should change(User, :count).by(1)
+    lambda { sign_up }.should change(User, :count).by(0)
+    expect(page).to have_content("This email is already taken")
+  end
+
   def sign_up(name = "chloe", username ="csharpd", email = "chloe@gmail.com", password = "frogs")
     visit '/users/new'
     expect(page.status_code).to eq 200

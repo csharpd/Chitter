@@ -6,8 +6,8 @@ class User
 
   property :id, Serial
   property :name, String
-  property :username, String
-  property :email, Text
+  property :username, String, :unique => true
+  property :email, String, :unique => true, :message => "This email is already taken"
   property :password_digest, Text
 
   # has n, :peeps, :through => Resource
