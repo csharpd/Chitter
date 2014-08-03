@@ -18,3 +18,9 @@ post '/users' do
     erb :"users/new"
   end
 end
+
+delete '/sessions' do
+  session[:user_id] = nil
+  flash[:notice] = "Good bye!"
+  redirect to ('/')
+end
