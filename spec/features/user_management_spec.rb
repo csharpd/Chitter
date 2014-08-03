@@ -5,20 +5,20 @@ include SessionHelpers
 
 feature "User signs up" do
   scenario "when previously not logged in" do
-    lambda { sign_up }.should change(User, :count).by(1)
+    expect{ sign_up }.to change(User, :count).by(1)
     expect(page).to have_content("Welcome")
     expect(User.first.email).to eq("chloe@gmail.com")
   end
 
   scenario "with a email that is already taken" do
-    lambda { sign_up }.should change(User, :count).by(1)
-    lambda { sign_up }.should change(User, :count).by(0)
+    expect { sign_up }.to change(User, :count).by(1)
+    expect { sign_up }.to change(User, :count).by(0)
     expect(page).to have_content("This email is already taken")
   end
 
   scenario "with a username that is already taken but a different email address" do
-    lambda { sign_up("chloe","csharpd","chloe@gmail.com","frogs") }.should change(User, :count).by(1)
-    lambda { sign_up("chloe","csharpd","chloecoder@gmail.com","frogs") }.should change(User, :count).by(0)
+    expect { sign_up("chloe","csharpd","chloe@gmail.com","frogs") }.to change(User, :count).by(1)
+    expect { sign_up("chloe","csharpd","chloecoder@gmail.com","frogs") }.to change(User, :count).by(0)
     expect(page).to have_content("That username is already taken")
   end
 

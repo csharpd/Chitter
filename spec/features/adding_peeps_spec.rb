@@ -1,9 +1,17 @@
 require 'spec_helper'
 
 feature "User adds a new peep" do
-  scenario "when browsing the homepage" do
+
+   before(:each) do
+    User.create(:name => "xxx", :username => "xoxo", :email => "test@test.com",
+      :password => 'test',
+      )
+  end
+
+  scenario "after signing in" do
     expect(Peep.count).to eq(0)
     visit '/'
+    sign_in('test@test.com','test')
     add_peep("Hola World")
     expect(Peep.count).to eq(1)
     peep = Peep.first
