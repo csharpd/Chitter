@@ -1,21 +1,25 @@
-<body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Chitter </title>
+    <link rel="stylesheet" type="text/css" href="/css/application.css">
+  </head>
 
-  <% if current_user %>
-    Welcome, <%=current_user.email %>
+  <body>
+    <% if current_user %>
+      Welcome, <%=current_user.email %>
 
-  <form method="post" action="/sessions">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Sign out">
-  </form>
-  <% end %>
+    <form method="post" action="/sessions">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Sign out">
+    </form>
+    <% end %>
 
-  <%= partial :flash %>
+    <%= partial :flash %>
 
+    <%= yield %>
 
+  </body>
 
-
-
-  <%= yield %>
-
-</body>
+</html>
 
