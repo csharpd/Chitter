@@ -1,4 +1,7 @@
 require 'spec_helper'
+# require_relative 'helpers/session'
+
+# include SessionHelpers
 
 # Feature
 # In order to use Chitter
@@ -8,7 +11,7 @@ require 'spec_helper'
 feature "User signs up" do
   scenario "when previously not logged in" do
     lambda { sign_up }.should change(User, :count).by(1)
-    # expect(page).to have_content("Welcome")
+    expect(page).to have_content("Welcome")
     expect(User.first.email).to eq("chloe@gmail.com")
   end
 
