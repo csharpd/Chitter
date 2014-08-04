@@ -1,7 +1,7 @@
 <ul>
-  <% @peeps.each do |peep| %>
-    <h1><%= peep.content %></h1>
-    <h3>Added at <%= peep.created_at %> by</h3>
+  <% @peeps.reverse.each do |peep| %>
+    <h2><%= peep.content %></h2>
+    <h3>Added on <%= peep.created_at.strftime("%m/%d/%y at %I:%M%p") %> by <%= peep.user.name %> | @<%= peep.user.username %> </h3>
   <% end %>
 </ul>
 

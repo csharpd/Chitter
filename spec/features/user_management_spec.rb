@@ -42,6 +42,15 @@ feature "User signs in" do
     sign_in('test@test.com','test')
     expect(page).to have_content("Welcome, test@test.com")
   end
+
+  scenario "with incorrect information" do
+    visit '/'
+    expect(page).not_to have_content("Welcome, test@test.com")
+    click_link "Sign in"
+    sign_in('test@test.com','wrong_password')
+    expect(page).not_to have_content("Welcome, test@test.com")
+  end
+
 end
 
 feature 'User signs out' do
