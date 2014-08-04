@@ -1,6 +1,7 @@
 <header>
 
-    <a href="/">ChitChat</a>
+    <div id="logo"><a href="/">ChitChat</a></div>
+    <div id="user-links">
       <% if current_user %>
         <form method="post" action="/sessions">
           <input type="hidden" name="_method" value="delete">
@@ -11,6 +12,7 @@
         <a href="/sessions/new">Sign in</a>
         <a href="/users/new">Sign up</a>
       <% end %>
+    </div>
 
 
 
