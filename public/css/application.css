@@ -27,10 +27,21 @@ a.button {
   text-shadow: 0 0 2px rgba(0,0,0, 0.4);
 }
 
+a.button.highlighted {
+  background-color: #A4D3EE
+}
+
 header #logo {
   margin: auto 0;
   display: flex;
   font-family: Helvetica, Arial, Sans-serif;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  font-family: CANDY;
+
 }
 
 header > * {
