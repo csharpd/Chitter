@@ -1,9 +1,7 @@
-
-
 <ul>
   <% @peeps.each do |peep| %>
-    <li><%= peep.content %></li>
-    <li>Added at <%= peep.created_at %></li>
+    <h1><%= peep.content %></h1>
+    <h3>Added at <%= peep.created_at %> by</h3>
   <% end %>
 </ul>
 
