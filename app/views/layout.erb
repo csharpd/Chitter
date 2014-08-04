@@ -2,13 +2,24 @@
 <html>
   <head>
     <title> ChitChat </title>
-
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link href="/css/application.css"rel="stylesheet" type="text/css" >
   </head>
 
   <body>
     <%= partial :header %>
     <%= partial :flash %>
+
+ <% if current_user %>
+      Welcome, <%=current_user.email %>
+
+    <div id="new-peep">
+      <form action="/peeps" method="post">
+        What's up Doc?: <input type="text" name="content">
+        <input type="submit" value="Peep!">
+      </form>
+    </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
