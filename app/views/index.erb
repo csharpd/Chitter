@@ -7,7 +7,7 @@
           <%= peep.content %>
         </div>
         <span class='source'>
-          Added on <%= peep.created_at.strftime("%m/%d/%y at %I:%M%p") %> by <%= peep.user.name %> | @<%= peep.user.username %>
+          Added on <%= peep.created_at.strftime("%m/%d/%y at %I:%M%p") %> by <%= User.get(peep.user_id).name %> | @<%= User.get(peep.user_id).username %>
         </span>
       </li>
     <% end %>
