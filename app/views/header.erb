@@ -1,9 +1,11 @@
 <header>
 
     <div id="logo"><a href="/">ChitChat</a></div>
-    <div id="user-links">
+
+        <a href="/peeps/new" class="add-peep button highlighted">Peep</a>
+
+  <div id="user-links">
       <% if current_user %>
-        <a href="/peeps/new" class="button highlighted">Peep</a>
         Welcome, <%=current_user.email %>
 
         <form method="post" action="/sessions">
