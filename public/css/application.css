@@ -2,10 +2,16 @@
   box-sizing: border-box;
 }
 
-
 body {
   font-family: 'Raleway', sans-serif;
   background-image: url(/images/square_bg.png)
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -70px;
 }
 
 header {
@@ -46,6 +52,7 @@ header #logo {
    font-family: Helvetica, Arial, Sans-serif;
    font-size: 30px;
 }
+
 
 header a {
   color: white;
@@ -111,3 +118,37 @@ header #user-links > * {
   background-color: rgba(169,29,42,0.75);
 }
 
+h1 {
+  font-size: 22px ;
+}
+
+form {
+  text-align: left;
+}
+
+  form p {
+    margin: 10px 0;
+  }
+
+  form input[type="text"], form input[type="password"] {
+    border: 1px solid black;
+    font-size: 16px;
+    width: 400px;
+  }
+
+  footer {
+    font-family:  'Raleway', sans-serif;
+    color: white;
+    background-color: #68838B;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    z-index: 1;
+  }
+
+footer a{
+  color: white;
+  text-decoration: none;
+}

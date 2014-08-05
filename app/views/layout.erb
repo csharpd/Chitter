@@ -8,11 +8,16 @@
   </head>
 
   <body>
-    <%= partial :header %>
-    <%= partial :flash %>
-
-
-    <%= yield %>
+      <div class='wrapper'>
+        <%= partial :header %>
+        <%= partial :flash %>
+        <div id='peeps-container'>
+            <%= yield %>
+          </div>
+      </div>
+      <footer>
+     <!--    <a id="github" href='https://github.com/csharpd'> csharpd</a> -->
+      </footer>
   </body>
 </html>
 
