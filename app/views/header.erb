@@ -3,6 +3,9 @@
     <div id="logo"><a href="/">ChitChat</a></div>
     <div id="user-links">
       <% if current_user %>
+        <a href="/peeps/new" class="button highlighted">Peep</a>
+        Welcome, <%=current_user.email %>
+
         <form method="post" action="/sessions">
           <input type="hidden" name="_method" value="delete">
           <input type="submit" value="Sign out" class='button'>
@@ -13,12 +16,11 @@
         <a href="/users/new" class="button">Sign up</a>
       <% end %>
 
-      <% if current_user %>
-      Welcome, <%=current_user.email %>
-      <a href="/peeps/new" class="button highlighted">Peep</a>
 
 
-    <% end %>
+
+
+
 
     </div>
 
