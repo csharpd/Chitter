@@ -15,14 +15,9 @@
 
       <% if current_user %>
       Welcome, <%=current_user.email %>
-      <a href="/links/new" class="button highlighted">Peep</a>
+      <a href="/peeps/new" class="button highlighted">Peep</a>
 
-    <div id="new-peep">
-      <form action="/peeps" method="post">
-        What's up Doc?: <input type="text" name="content">
-        <input type="submit" value="Peep!">
-      </form>
-    </div>
+
     <% end %>
 
     </div>
