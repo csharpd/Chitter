@@ -1,9 +1,9 @@
 <header>
 
     <div id="logo"><a href="/">ChitChat</a></div>
-
+  <% if current_user %>
         <a href="/peeps/new" class="add-peep button highlighted">Peep</a>
-
+    <% end %>
   <div id="user-links">
       <% if current_user %>
         Welcome, <%=current_user.email %>
