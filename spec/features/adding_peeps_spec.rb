@@ -12,6 +12,7 @@ feature "User adds a new peep" do
     expect(Peep.count).to eq(0)
     visit '/'
     sign_in('test@test.com','test')
+    click_link 'Peep'
     add_peep("Hola World")
     expect(Peep.count).to eq(1)
     peep = Peep.first
