@@ -26,5 +26,17 @@ If you have time you can implement the following:
 Or / and:
 * Work on the css to make it look good (we all like beautiful things).
 
+##Outcome
+
+http://limitless-beach-7213.herokuapp.com/
+
+Used: Sinatra, Datamapper, PSQL, Capybara, Rspec
+
 ##To Do
+
+* User can reply to peeps
+* Password confirmation
+* Forgotten Password
+* Filter peeps by user
+* More styling
 
