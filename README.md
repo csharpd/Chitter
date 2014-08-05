@@ -34,9 +34,9 @@ Used: Sinatra, Datamapper, PSQL, Capybara, Rspec
 
 ##To Do
 
-* User can reply to peeps
-* Password confirmation
-* Forgotten Password
-* Filter peeps by user
+* Allow User to reply to peeps
+* Password confirmation functionality
+* Forgotten Password option
+* Filter peeps by user functionality
 * More styling
 
