@@ -13,6 +13,12 @@ feature "User signs up" do
     expect(User.first.email).to eq("chloe@gmail.com")
   end
 
+  scenario "with a password that doesn't match" do
+    expect { sign_up('chloe','csharpd','chloe@gmail.com', 'frogs', 'fail') }.to change(User, :count).by(0)
+    expect(current_path).to eq('/users')
+    expect(page).to have_content("Sorry, your passwords don't match")
+  end
+
   scenario "with a email that is already taken" do
     expect { sign_up }.to change(User, :count).by(1)
     expect { sign_up }.to change(User, :count).by(0)
@@ -20,7 +26,7 @@ feature "User signs up" do
   end
 
   scenario "with a username that is already taken but a different email address" do
-    expect { sign_up("chloe","csharpd","chloe@gmail.com","frogs") }.to change(User, :count).by(1)
+    expect { sign_up("chloe","csharpd","chloe@gmail.com","frogs","frogs") }.to change(User, :count).by(1)
     expect { sign_up("chloe","csharpd","chloecoder@gmail.com","frogs") }.to change(User, :count).by(0)
     expect(page).to have_content("That username is already taken")
   end
@@ -31,7 +37,7 @@ feature "User signs in" do
 
   before(:each) do
     User.create(:name => "xxx", :username => "xoxo", :email => "test@test.com",
-      :password => 'test',
+      :password => 'test', :password_confirmation => 'test'
       )
   end
 
@@ -57,7 +63,7 @@ feature 'User signs out' do
 
    before(:each) do
     User.create(:name => "xxx", :username => "xoxo", :email => "test@test.com",
-      :password => 'test',
+      :password => 'test', :password_confirmation => 'test'
       )
   end
 

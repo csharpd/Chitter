@@ -13,6 +13,7 @@ class User
   has n, :peeps, :through => Resource
 
   def password=(password)
+    @password = password
     self.password_digest = BCrypt::Password.create(password)
   end
 
@@ -24,5 +25,10 @@ class User
       nil
     end
   end
+
+  attr_reader :password
+  attr_accessor :password_confirmation
+
+  validates_confirmation_of :password, :message => "Sorry, your passwords don't match"
 
 end
