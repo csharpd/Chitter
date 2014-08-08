@@ -2,8 +2,8 @@
   box-sizing: border-box;
 }
 
-
 body {
+  margin-top: 65px;
   font-family: 'Raleway', sans-serif;
   background: url(/images/interviewer.png) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -28,7 +28,6 @@ header {
   padding: 0 5px;
   position: fixed;
   top: 0px;
-  z-index: 1;
 }
 
 .button {
@@ -86,11 +85,12 @@ header #user-links > * {
 
 #peeps-container {
   background-color: white;
-  margin: 40px;
+  margin-top: 100px;
+  margin-left: 200px;
+  margin-right: 200px;
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
   padding: 10px;
    border-radius: 7px;
-   z-index: 0;
 }
 
 .peep {
