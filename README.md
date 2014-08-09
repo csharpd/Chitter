@@ -32,11 +32,10 @@ http://limitless-beach-7213.herokuapp.com/
 
 Used: Sinatra, Datamapper, PSQL, Capybara, Rspec
 
-##To Do
+##Possible extension
 
-* Allow User to reply to peeps
-* Password confirmation functionality
+
 * Forgotten Password option
 * Filter peeps by user functionality
-* More styling
+
 
