@@ -6,20 +6,21 @@
         <div class='description'>
           <%= peep.content %>
         </div>
-        <span class='source'>
-          Added on <%= peep.created_at.strftime("%m/%d/%y at %I:%M%p") %> by <%= User.get(peep.user_id).name %> | @<%= User.get(peep.user_id).username %>
-        </span>
+        <div class='source'>
+           <%= peep.created_at.strftime("%m/%d/%y - %I:%M%p") %> | @<%= User.get(peep.user_id).username %>
+        </div>
       </li>
       <section id='reply'>
         <li class='peep-reply'>
-        <h3>Replies</h3>
         <%peep.replies.each do |reply| %>
-          <p> <%= peep.created_at.strftime("%m/%d/%y") %> @<%= User.get(reply.user_id).username %> : <%= reply.message %> </p>
+           <%= reply.message %>
+        <div class='source'>
+           <%= peep.created_at.strftime("%m/%d/%y- %I:%M%p") %> | @<%= User.get(reply.user_id).username %> </div>
         <% end %>
         </li>
             <% if current_user %>
             <form action="/reply/<%= peep.id %>/<%= current_user.id %>" method="post">
-            <textarea name="reply" id="reply_text" cols="90" rows="2"></textarea>
+            <textarea name="reply" id="reply_text" cols="70" rows="2"></textarea>
             <input type="submit" value="Reply" class="add-peep button reply">
           </form>
         <% end %>

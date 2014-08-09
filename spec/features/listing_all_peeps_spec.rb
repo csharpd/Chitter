@@ -12,8 +12,8 @@ feature "User browses the list of peeps" do
   it "when opening the home page" do
     visit '/'
     expect(page).to have_content("A little peep!")
-    expect(page).to have_content("08/03/14 at 06:40PM")
-    expect(page).to have_content("Chloe")
+    expect(page).to have_content("08/03/14 - 06:40PM")
+    expect(page).to have_content("CsharpD")
   end
 
 end
