@@ -4,7 +4,7 @@ feature "User browses the list of peeps" do
 
   before(:each) {
     user = User.create(:name => "Chloe", :username => "CsharpD", :email => "chloe@test.com",
-      :password => 'frogs',
+      :password => 'frogs', :password_confirmation => 'frogs',
       )
     Peep.create(:content => "A little peep!", :created_at => "2014-08-03 18:40:51", :user_id => user.id)
   }

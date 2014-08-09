@@ -12,7 +12,6 @@ feature "User adds a new peep" do
     expect(Peep.count).to eq(0)
     visit '/'
     sign_in('test@test.com','test')
-    save_and_open_page
     click_link 'Peep'
     add_peep("Hola World")
     expect(Peep.count).to eq(1)
@@ -27,3 +26,4 @@ feature "User adds a new peep" do
     end
   end
 end
+
