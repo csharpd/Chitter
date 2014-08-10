@@ -109,7 +109,7 @@ header #user-links > * {
 
 #welcome{
    font-family: 'Marck Script', cursive;
-   font-size: 20px;
+   font-size: 23px;
    margin-right: 15px;
 }
 
@@ -126,6 +126,7 @@ header #user-links > * {
 }
 
 .peep {
+  background-color: white;
   color: black;
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
   margin: 15px inherit;
@@ -136,6 +137,7 @@ header #user-links > * {
 }
 
 .peep-reply {
+   background-color: white;
   color: black;
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
   padding: 10px 15px;
