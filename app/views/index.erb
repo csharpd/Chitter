@@ -1,6 +1,6 @@
 
   <ul id='peeps'>
-  <h1>Peeps</h2>
+  <h1>Peeps</h1>
     <% @peeps.reverse.each do |peep| %>
        <li class='peep'>
         <div class='description'>
@@ -11,8 +11,9 @@
         </div>
       </li>
       <section id='reply'>
-        <li class='peep-reply'>
+
         <%peep.replies.each do |reply| %>
+        <li class='peep-reply'>
            <%= reply.message %>
         <div class='source'>
            <%= peep.created_at.strftime("%m/%d/%y- %I:%M%p") %> | @<%= User.get(reply.user_id).username %> </div>
