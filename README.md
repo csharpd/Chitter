@@ -5,7 +5,7 @@ Chitter is a basic version of twitter where users can sign up, login, recover th
 
 This was built without using Twitter Bootstrap or any front end frameworks.
 
-![](app/assets/images/chitterscreenshot.png)
+![](public/images/chitterscreenshot.png)
 
 ####Deployed
 To view, visit: http://limitless-beach-7213.herokuapp.com/
