@@ -1,41 +1,60 @@
-#Challenge: Week 6 
+Chitter
+=================
 
-We are going to write a little Twitter clone that will allow the users to post messages to a public stream.
+Chitter is a basic version of twitter where users can sign up, login, recover thier password and post to a public timeline. Users can also reply to each post and start a conversation.
 
-##Features
-* In order to use chitter as a maker I want to sign up to the service
-* In order to user chitter as a maker I want to log in
-* In order to avoid others to use my account as a maker I want to log out
-* In order to let people know what I am doing as a maker I want to post a message to chitter
-* In order to see what people have to say as a maker I want to see all peeps in chronological order
+This was built without using Twitter Bootstrap or any front end frameworks.
 
-##Notes
+![](app/assets/images/chitterscreenshot.png)
 
-* Makers sign up to chitter with their email, password, name and a user name (i.e. warpig@makersacademy.com, s3cr3t, Enrique Comba Riepenhausen, ecomba)
-* The username and email are unique
-* Peeps (posts to chitter) have the name of the maker and their user handle
-* Use bcrypt to secure the passwords
-* Use data mapper and postgres to save the data
-* You don't have to be logged in to see the peeps
-* You only can peep if you are logged in.
+####Deployed
+To view, visit: http://limitless-beach-7213.herokuapp.com/
 
-##Bonus
-If you have time you can implement the following:
-* In order to start a conversation as a maker I want to reply to a peep from another maker.
+###Specification
 
-Or / and:
-* Work on the css to make it look good (we all like beautiful things).
++ Users sign up to chitter with their email, password, name and a user name
++ The username and email are unique
++ Peeps (posts to chitter) have the name of the maker and their user handle
++ Use data mapper and postgres to save the data
++ You don't have to be logged in to see the peeps
++ Users can reply to peeps
 
-##Outcome
+###Technologies used
 
-http://limitless-beach-7213.herokuapp.com/
++ Ruby
++ RSPEC
++ Sinatra
++ BCrypt
++ Datamapper
++ PSQL
++ Capybara
++ Heroku
 
-Used: Sinatra, Datamapper, PSQL, Capybara, Rspec
+###Set up
+
+```sh
+git clone https://github.com/csharpd/Chitter.git
+cd yelp
+bundle install
+```
+
+###Run
+
+```sh
+cd chitter
+rackup
+```
+Open the browser at localhost:3000 to view the app
+
+###Test
+
+```sh
+cd chitter
+rspec
 
 ##Possible extension
 
-
 * Forgotten Password option
-* Filter peeps by user functionality
+* Ability to filter peeps by user
 
 
