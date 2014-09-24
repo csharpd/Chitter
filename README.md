@@ -51,6 +51,7 @@ Open the browser at localhost:3000 to view the app
 ```sh
 cd chitter
 rspec
+```
 
 ##Possible extension
 
